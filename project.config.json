@@ -13,6 +13,8 @@
 	"appid": "wx72c3dd73cc2b2fd2",
 	"projectname": "movie-imooc",
 	"libVersion": "2.2.5",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

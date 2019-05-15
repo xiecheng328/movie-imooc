@@ -9,12 +9,12 @@ var rp = require('request-promise');
 exports.main = async(event, context) => {
 
 
-  return rp(`http://api.douban.com/v2/movie/in_theaters?start=${event.start}&count=${event.count}`)
+	return rp(`http://api.douban.com/v2/movie/in_theaters?apikey=0df993c66c0c636e29ecbb5344252a4a&start=${event.start}&count=${event.count}`)
     .then(function(res) {
       console.log(res);
       return res;
     })
     .catch(function(err) {
-      console.err(err);
+      console.error(err);
     });
 }
