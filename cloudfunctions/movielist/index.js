@@ -6,15 +6,12 @@ cloud.init()
 var rp = require('request-promise');
 
 // 云函数入口函数
-exports.main = async(event, context) => {
+exports.main = async (event, context) => {
 
+  try {
+    return await rp(`https://frodo.douban.com/api/v2/subject_collection/movie_showing/items?start=${event.start}&count=${event.count}&apiKey=054022eaeae0b00e0fc068c0c0a2102a`)
+  } catch (error) {
+    console.log(error)
+  }
 
-	return rp(`http://api.douban.com/v2/movie/in_theaters?apikey=0df993c66c0c636e29ecbb5344252a4a&start=${event.start}&count=${event.count}`)
-    .then(function(res) {
-      console.log(res);
-      return res;
-    })
-    .catch(function(err) {
-      console.error(err);
-    });
 }
