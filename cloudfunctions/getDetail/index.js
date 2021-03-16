@@ -24,5 +24,8 @@ exports.main = async (event, context) => {
     return data
   } catch (e) {
     console.log(e)
+    return await rp(`https://frodo.douban.com/api/v2/movie/${event.movieid}?apiKey=054022eaeae0b00e0fc068c0c0a2102a`)
+  } catch (error) {
+    console.log(error)
   }
 }
