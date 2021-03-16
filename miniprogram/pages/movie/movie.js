@@ -19,9 +19,9 @@ Page({
         count: 10
       }
     }).then(res => {
-      // console.log(res);
+      console.log(res.result);
       this.setData({
-        movieList: this.data.movieList.concat(JSON.parse(res.result).subjects)
+        movieList: this.data.movieList.concat(res.result.subject_collection_items)
       });
       wx.hideLoading();
     }).catch(err => {

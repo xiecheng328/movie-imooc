@@ -111,9 +111,9 @@ Page({
         movieid: options.movieid
       }
     }).then(res => {
-      // console.log(res);
+      console.log(res);
       this.setData({
-        detail: JSON.parse(res.result)
+        detail: res.result
       });
       wx.hideLoading();
     }).catch(err => {
