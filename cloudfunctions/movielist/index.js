@@ -11,7 +11,7 @@ exports.main = async (event, context) => {
     const {
       data
     } = await axios({
-      url: 'https://frodo.douban.com/api/v2/subject_collection/movie_showing/items?start=0&count=20&apiKey=054022eaeae0b00e0fc068c0c0a2102a',
+      url: `https://frodo.douban.com/api/v2/subject_collection/movie_showing/items?start=${event.start}&count=${event.count}&apiKey=054022eaeae0b00e0fc068c0c0a2102a`,
       method: 'get',
       headers: {
         "Host": "frodo.douban.com",
